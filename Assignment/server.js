@@ -38,6 +38,13 @@ app.use(bp.urlencoded({ extended: true }));
 app.use(bp.json());
 
 
+/* --------------------  downloading the cv -------------------     */
+app.get('/download', function(req, res){
+    var file = __dirname + '/download.jpg';
+    res.download(file); // Set disposition and send it.
+   });
+
+
 
 
 

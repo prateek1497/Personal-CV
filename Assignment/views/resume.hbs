@@ -157,7 +157,17 @@ function myFunction() {
         
         {{data.second.content}}
         <br>
-        <div class="cv">Download CV  <i class="fa fa-download"></i> </div>
+
+
+         <a href = "/download">
+        <button class="cv"> 
+          Download CV <i class="fa fa-download"> </i>
+        </button>
+         </a>  
+        
+
+
+
 
       </div>
 
@@ -259,7 +269,7 @@ function myFunction() {
       </div>
       <div class = "edu-block-content">
         <ul>
-          <li style="list-style-type: circle">{{array.name}}</li><br>
+          <li >{{array.name}}</li><br>
           <li>{{array.cgpa}}</li><br>
           <li>{{array.board}}</li><br>
 
@@ -417,44 +427,11 @@ function myFunction() {
                    dots[i].className = dots[i].className.replace("active","");
                    }
                    slides[slideIndex-1].style.display = "block";
-                   dots[slideIndex-1].className += "active";
+                   dots[slideIndex-1].className += " active";
                    setTimeout(showSlides, 1000);
                    // Change image every 2 seconds
                }
            </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

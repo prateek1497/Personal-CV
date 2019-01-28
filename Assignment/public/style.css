@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 div.banner-layer{
     background: url(background-photo.jpg);
     width: 100%;
@@ -124,7 +128,7 @@ body {margin:0;font-family:Arial}
 /* drop wala khatam */
 div.intro{
     margin-left: 3%;
-    margin-top: 13%;
+    margin-top: 33vh;
     background: transparent;
 }
 div.greet{
@@ -234,7 +238,7 @@ div.about-row-1{
     width: 100%;
     margin-left:3%; 
 }
-div.cv{
+button.cv{
     padding: 11px 35px;
     background: none;
     color: black;;
@@ -248,7 +252,7 @@ div.cv{
     margin-left: 3%;
     
 }
-div.cv:hover{
+button.cv:hover{
 background-color:black;
 color:white;
 }
@@ -520,11 +524,13 @@ div.project-row-grid-2{
 @media only screen and (max-width:600px){
     div.project-row-grid-1{
         display: grid;
-        
+        grid-template-columns: 100%;
+        grid-auto-flow: inherit;
         
     }
     div.project-row-grid-2{
         display: grid;
+        grid-template-columns: 100%;
         
     }
 
