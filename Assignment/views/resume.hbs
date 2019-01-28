@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "stylesheet" href = "../public/style.css">
+    <link rel = "stylesheet" href = "../public/circular-bar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{!-- the avobe link is used only for downloading the download icon --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <title>RESUME</title>
+</head>
+<body>
+
+
+<!--   ========================= BELOW IS THE JS AND HTML OF SCROLL BUTTON  =================================== -->
+
+
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><strong>^</strong></button>
+
+    <script>
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+          } else {
+            document.getElementById("myBtn").style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+<!--   ========================= SCROLL BUTTON FUNTIONALITY OVER!!!!!!!!!   =================================== -->
+
+
+
+
+  <!--  ===============================    1ST PAGE BANNER STARTS HERE     ===================================   -->
+
+<section class="banner-sec">
+  <div class="banner-layer">
+    <header>
+
+
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#about-section-id">About</a>
+  <a href="#services-section-id">Technologies</a>
+  <a href="#edu-section-id">Education</a>
+  <div class="dropdown">
+    <button class="dropbtn">Pages 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#blogs-section-id">Blogs</a>
+      <a href="#projects-section-id">Projects</a>
+      <a href="#testimonial-section-id">Testinomials</a>
+    </div>
+  </div> 
+  <a href="#contact-section">Contact</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+
+{{!-- 
+      <nav class="nav-bar">
+        <ul>
+          <li><a href="#home">Home<hr></a></li>
+          <li><a href="#about-section-id">About<hr></a></li>
+          <li><a href="#services-section-id">Technology<hr></a></li>
+          <li><a href="#edu-section-id">Education<hr></a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Pages<hr></a>
+            <div class="dropdown-content">
+              <a href="#blogs-section-id">Blog</a>
+              <a href="#projects-section-id">Project</a>
+              <a href="#testimonial-section-id">Testinomials</a>
+            </div>
+          </li>
+
+          <li><a href="#contact-section-id">Contact<hr></a></li>
+
+          
+        </ul>
+        
+        
+      </nav> --}}
+    </header>
+
+    <div class="intro">
+        <div class="greet">{{data.first.greet}}</div>
+        <div class="name">{{data.first.name}}</div>
+        <div class="post">{{data.first.post}}</div>
+
+        
+    </div>
+
+    <div class="readmore"> Read More </div>
+
+    </div>
+    
+    
+
+
+
+  </div>
+</section>
+
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+  <!--  ===============================    2nd page STARTS ABOUT ME     ===================================   -->
+
+
+<section class="about-sec" id="about-section-id">
+  <div class="about">
+    <header class="about-header">
+      <h2> {{data.second.heading}}<hr></h2>
+    </header>
+    <div class="about-rows">
+      <div class="about-row-1">
+        <!-- small description from JSON-->
+        
+        {{data.second.content}}
+        <br>
+        <div class="cv">Download CV  <i class="fa fa-download"></i> </div>
+
+      </div>
+
+      <div class="about-row-2">
+        <!-- photo here from JSON-->
+       <img src = "../public/profile.jpg">  
+
+      </div>
+
+      <div class="about-row-3">
+        <!-- for representing the skills values from JSON-->
+
+        {{#each data.second.skills as |array|}}
+        <h5 class="language"> {{array.name}}<span style="width:40%;float:right">{{array.value}}%</span></h5>
+        <div class="strip" style = "width:70%;height:3%;">
+          <div class="cover-strip" style="height:100%;width:{{array.value}}%">b
+
+          </div>
+        </div>
+        {{/each}}
+        
+        </div>
+        
+
+      
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!--  ===============================    3rd page STARTS TECH/SERVICES     ===================================   -->
+
+
+  <section class="services-section" id="services-section-id">
+  <div class="services">
+      <header class="services-header">
+        <h2> {{data.third.heading}}<hr></h2>
+      </header>
+
+    <div class="tech-service">
+
+      {{#each data.third.content as |array|}}
+      <div class="tech-service-content">
+        
+
+        
+          <div class="service-name">
+            <i class="{{array.image}}"></i> 
+            <strong>{{array.name}}</strong>
+          </div>
+          <div class="service-desc">
+            {{array.desc}}
+          </div>
+          
+        
+
+
+
+      </div>
+      {{/each}}
+
+    </div>
+
+
+
+      
+    </div>
+   
+</section>
+
+
+<!--   =============================== 4th PAGE STARTS EDUCATION  ==================================   -->
+
+
+<section class="edu-section" id="edu-section-id" >
+  <div class="education-div" style="background:url(education.jpg); height:100%;">
+    <header class="about-header">
+      <h2> Education<hr></h2>
+    </header>
+
+    <div>
+
+
+       
+
+    {{#each data.fourth.content as |array|}}
+    
+    <div class="edu-block"  style="    margin : 6% 14% 7% 6%;">
+
+      {{#if array.left}}
+      <div class = "edu-block-black" style="float:left;margin-right:7%" >
+        {{else}}
+        <div class = "edu-block-black" style="float:right;">
+          {{/if}}
+        
+        {{array.post}}<br>
+       {{array.year}}
+      </div>
+      <div class = "edu-block-content">
+        <ul>
+          <li style="list-style-type: circle">{{array.name}}</li><br>
+          <li>{{array.cgpa}}</li><br>
+          <li>{{array.board}}</li><br>
+
+          </ul>
+        
+
+        </div>
+      
+
+
+       
+
+    </div>
+      
+    
+    {{/each}}
+    
+  
+
+   
+  </div>
+</section>
+
+<!--   =============================== 5TH PAGE STARTS HERE  BLOGS  ==================================   -->
+
+
+<section class="blogs-section" id="blogs-section-id">
+  <div class="blogs">
+    <header class="blog-header">
+      <h2> {{data.fifth.heading}}<hr></h2>
+    </header>
+    <div class="blogs-content">
+
+      <header class="blogs-grids-header">
+        <strong>{{data.fifth.sub-heading}}</strong>
+        <p style ="font-family: 'Open Sans', sans-serif;color: #aaa;line-height: 28px;letter-spacing: .5px;font-size: 14px;">{{data.fifth.sub-heading-para}}</p>
+
+      </header>
+
+      <div class="blogs-grid">
+
+      {{#each data.fifth.grid as |array|}}
+      <div class="blogs-grid-start">
+        
+        <h2>{{array.date}}</h2>
+        <h1 style = "color:white;letter-spacing: 1px;">{{array.name}}</h1>
+          <p>{{array.content}}</p>
+          
+        
+
+
+
+      </div>
+      {{/each}}
+
+    </div>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+</section>
+
+
+<!--   =============================== 6TH PAGE STARTS HERE  PROJECTS  ==================================   -->
+
+<section class="testinomial-section" id="testimonial-section-id">
+  <div class="testimonial">
+      <header class="testimonial-header">
+        <h2> {{data.seventh.heading}} <hr></h2>
+      </header>
+
+    <div class="slideshow-container">
+
+
+
+        {{#each data.seventh.effect as |array|}}
+          <div class="image-review-box">
+
+            <div class="image-review-box-grid">
+
+              <div class="test-image fade">
+                        <img src = "{{array.image}}" style="width:100%;height:100%;border-radius: 50%;">
+
+                      </div>
+
+                      <div class="test-review fade" >
+                        <h5 class="prara-heading-name">{{array.name}}</h5>
+                        <div class="prara">
+                          
+                          <span><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+                                  {{array.content}}
+                          <span><i class="fa fa-quote-right" aria-hidden="true"></i></span>
+
+                        </div>
+
+
+
+                        <p class="date">{{array.time}}</p>
+                      </div>
+
+
+
+            </div>
+
+        </div>
+
+          {{/each}}
+
+
+    </div>
+
+
+
+
+      <div style="text-align:center" >
+               {{#each data.seventh.effect}}
+                  <span class="dot"></span>
+                  
+               {{/each}}
+               
+           </div>
+
+
+
+
+
+
+           <script>
+               let slideIndex = 0;
+               showSlides();
+
+               function showSlides()
+               {
+                   let i;
+                   let slides = document.getElementsByClassName("image-review-box");
+                   let dots = document.getElementsByClassName("dot");
+                   for (i = 0; i < slides.length; i++) {
+                   slides[i].style.display = "none";
+                   }
+                   slideIndex++;
+                   if (slideIndex > slides.length) {slideIndex = 1}
+
+                   
+                   for (i = 0; i < dots.length; i++) {
+                   dots[i].className = dots[i].className.replace("active","");
+                   }
+                   slides[slideIndex-1].style.display = "block";
+                   dots[slideIndex-1].className += "active";
+                   setTimeout(showSlides, 1000);
+                   // Change image every 2 seconds
+               }
+           </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</section>
+
+
+
+<!--   =============================== 7th PAGE STARTS HERE  TESTIMONIALS  ==================================   -->
+
+<section class="projects-section" id = "projects-section-id">
+<div class="project-div">
+  <header class="project-header">
+      <h2> {{data.sixth.heading}}<hr></h2>
+    </header>
+
+  <div class = "projects-grid-all">
+
+
+
+<div class = "project-row-grid-1">
+        {{#each data.sixth.links1 as |array| }}
+    
+
+            <div class="project-col-grid-1">
+              <img src="{{array}}" style="width:100%;height:100%">
+            </div>
+            
+    
+    {{/each}}
+    </div>
+<div class = "project-row-grid-2">
+     {{#each data.sixth.links2 as |array| }}
+    
+
+                <div class="project-col-grid-1">
+                  <img src="{{array}}" style="width:100%;height:100%">
+                </div>
+                
+       
+    {{/each}}
+ </div>
+
+<div class = "project-row-grid-1">
+        {{#each data.sixth.links3 as |array| }}
+    
+
+            <div class="project-col-grid-1">
+              <img src="{{array}}" style="width:100%;height:100%">
+            </div>
+            
+    
+    {{/each}}
+    </div>
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+<!--   =============================== 8 TH PAGE STARTS HERE  CONTACTS  ==================================   -->
+
+
+
+
+
+
+<section class="contact-section" id = "contact-section-id">
+  <div class="contact">
+    <header class="about-header">
+      <h2> {{data.eighth.heading}}<hr></h2>
+    </header>
+
+    <div class="address-form">
+      <div class="address-info">
+        <header style = " text-transform: capitalize;margin-left:30%;font-family: 'Open Sans', sans-serif;color: #333;font-size: 25px;letter-spacing: 1px;"> <h4>{{data.eighth.left-sub-heading}}</h4></header>
+        <div class = "address-info-content">
+          
+
+          {{#each data.eighth.content as |array|}}
+
+
+            <div class="icon_address">
+          
+            <i class = "{{array.icon}}" style="    margin-top: 15%;
+    padding-left: 80%;"></i>
+            
+
+          <div class = "address-content">
+            <h1> {{array.name}}   </h1>
+           
+            {{array.value1}}<br>
+            {{array.value2}}
+          </div>
+
+
+            </div>
+
+
+          {{/each}}
+
+
+
+          
+
+
+        </div>  
+      </div>
+
+
+
+        <div class = "form-info">
+
+        <header style = " text-transform: capitalize;font-family: 'Open Sans', sans-serif;color: #333;font-size: 25px;letter-spacing: 1px;"> <h4>{{data.eighth.right-sub-heading}}</h4></header>
+
+            <form action="/api" method="post">
+                       <label class="contacts_content1_">
+                           <i class="fa mr-2 fa-user" aria-hidden="true"></i>
+                           <span>Name</span>
+                       </label>
+                       <input class="input_box" type="text" name="Name" placeholder="Name">
+                       <br>
+
+                       <label class="contacts_content1_">
+                           <i class="fa mr-2 fa-envelope-open" aria-hidden="true"></i>
+                           <span>Email</span>
+                       </label>
+                       <input class="input_box" type="email" name="Email" placeholder="Email">
+                       <br>
+                       <label class="contacts_content1_">
+                           <i class="fa mr-2 fa-phone" aria-hidden="true"></i>
+                           <span>Phone</span>
+                       </label>
+                       <input class="input_box" type="text" name="Phone" placeholder="Phone" >
+                       <br>
+                       <label class="contacts_content1_">
+                           <i class="fa mr-2 fa-edit" aria-hidden="true"></i>
+                           <span>Message</span>
+                       </label>
+                       <input class="input_box" type="text" name="Message" placeholder="Message"></input>
+                       <br>
+                       <input type="submit" value="Submit" class="submit">
+                   </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    </div>
+</section>
+
+
+
+
+<!--   =============================== ENDING OF THE PROJECT  ==================================   -->
+
+
+
+<footer class="py-5">
+	<div class="footer-container">
+		<div class="agileinfo-grids">
+			<div class="agile-grid-left agile-grid-right text-center">
+				<div class="social mb-4">
+					<ul class = "footer-icons">
+						<li><a href="#"><i class="fa mr-2 fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fa mr-2 fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa mr-2 fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa mr-2 fa-pinterest"></i></a></li>
+						<li><a href="#"><i class="fa mr-2 fa-vk"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright text-center">
+			<p>© Design by <a href="http://localhost/3000/api"> PRATEEK AWASTHI</a> </p>
+		</div>
+	</div>
+</footer>
+
+
+</body>
+</html>
