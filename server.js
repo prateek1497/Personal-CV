@@ -34,6 +34,9 @@ console.log(fn({text: 'Click me!'}));
 // *********************************************************************************************  //
 
 
+
+
+
 app.use(bp.urlencoded({ extended: true }));
 app.use(bp.json());
 
@@ -76,7 +79,7 @@ app.use('/public',express.static('public'))
 
 app.get('/api',function(req,res){
     //https://api.myjson.com/bins/lzd08
-    fetch('https://api.myjson.com/bins/hxf5c')
+    fetch('https://api.myjson.com/bins/16gqj4')
     .then(res1 => res1.json())
     .then(data => {console.log(data); res.render("resume",{data})})
     .catch(err=>console.log('error hai bhai'));
@@ -86,18 +89,19 @@ app.get('/api',function(req,res){
 
 app.post('/api', function(req, res) {
     const form = {
-        'name': req.body.Name,
-        'email': req.body.Email,
-        'phone': req.body.Phone,
-        'message': req.body.Message
+        'name': req.body.id_name
+        // 'email': req.body.Email,
+        // 'phone': req.body.Phone,
+        // 'message': req.body.Message
     }
     console.log(form);
     file.appendFile('info.txt', JSON.stringify(form), function(err){
         if(err) throw err;
         console.log('Saved');
     });
-    res.redirect('/api');
+   res.send('Thank you for your response');
  });
+
 
 
 

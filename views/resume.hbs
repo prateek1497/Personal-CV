@@ -55,26 +55,28 @@
     <header>
 
 
+<div class="navbar">
+<label for="toggle">&#9776;</label>
+<input type="checkbox" id="toggle"/>
+<div class="nav-items">
+<a href="#">Home</a>
+<a href="#about-section-id">About </a>
+<a href="#services-section-id">Technology</a>
+<a href="#edu-section-id">Education</a>
+<div class="dropdown">
+<button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+<div class="dropdown-menu">
+<a href="#blogs-section-id">Blogs</a>
+<a href="#projects-section-id">Projects</a>
+<a href="#testinomial-section">Testinomials</a>
 
-<div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#about-section-id">About</a>
-  <a href="#services-section-id">Technologies</a>
-  <a href="#edu-section-id">Education</a>
-  <div class="dropdown">
-    <button class="dropbtn">Pages 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#blogs-section-id">Blogs</a>
-      <a href="#projects-section-id">Projects</a>
-      <a href="#testimonial-section-id">Testinomials</a>
-    </div>
-  </div> 
-  <a href="#contact-section">Contact</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
+<a href="#contact-section-id">Contact</a>
+
+</div>
+</div>
+</div>
 
 
 {{!-- 
@@ -345,7 +347,7 @@ function myFunction() {
 
 <!--   =============================== 6TH PAGE STARTS HERE  PROJECTS  ==================================   -->
 
-<section class="testinomial-section" id="testimonial-section-id">
+<section class="testinomial-section" id="testinomial-section-id">
   <div class="testimonial">
       <header class="testimonial-header">
         <h2> {{data.seventh.heading}} <hr></h2>
@@ -527,8 +529,7 @@ function myFunction() {
 
             <div class="icon_address">
           
-            <i class = "{{array.icon}}" style="    margin-top: 15%;
-    padding-left: 80%;"></i>
+            <i class = "{{array.icon}}" style=" margin-top: 15%;padding-left: 80%;"></i>
             
 
           <div class = "address-content">
@@ -558,12 +559,12 @@ function myFunction() {
 
         <header style = " text-transform: capitalize;font-family: 'Open Sans', sans-serif;color: #333;font-size: 25px;letter-spacing: 1px;"> <h4>{{data.eighth.right-sub-heading}}</h4></header>
 
-            <form name = "myform" action="/api" method="post" onsubmit="return validateForm()">  
+            <form name = "myForm" method="post" >  
                        <label class="contacts_content1_">
                            <i class="fa mr-2 fa-user" aria-hidden="true"></i>
                            <span>Name</span>
                        </label>
-                       <input class="input_box" type="text" name="Name" placeholder="Name">
+                       <input class="input_box" id ="id_name" type="text" name="Name" placeholder="Name" maxlength="10">
                        <br>
 
                        <label class="contacts_content1_">
@@ -584,31 +585,31 @@ function myFunction() {
                        </label>
                        <input class="input_box" type="text" name="Message" placeholder="Message"></input>
                        <br>
-                       <input type="submit" value="Submit" class="submit">
+                       <input type="button" value="Submit" class="submit" onclick="return validateForm()">
                    </form>
 
+
+
+
+
+
+
+
+
+
+
+
+
+                    <p id="demo"></p>
+                   
 
 
         </div>
 
 
 
-                    <script>  
 
-                      function validateForm() {
-                        var name = document.forms["myForm"]["Name"].value;
-                        var phone = document.forms["myForm"]["Phone"].value;
-                        var message = document.forms["myForm"]["Message"].value;
-                        var y = document.getElementById('number').value;
 
-                        if(!NaN(y))
-                          return false;
-                        if (name == "" || phone == "" || message = "") {
-                          window.alert("Name must be filled out");
-                          return false;
-                        }
-                      }
-                      </script>
     </div>
 
 
@@ -645,6 +646,6 @@ function myFunction() {
 	</div>
 </footer>
 
-
+<script src="./public/client.js"></script>
 </body>
 </html>
