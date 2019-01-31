@@ -15,23 +15,6 @@ div.banner-layer{
 body {margin:0;font-family:Arial}
 
 
-
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
-  }
-
-
-
-
-
 .navbar{
     overflow: hidden;
     
@@ -369,7 +352,7 @@ div.service-desc{
 
 
 div.education-div{
-    background: url(edu.jpg) ;
+    background: url(../public/education.jpg);
 
     
 }
@@ -419,12 +402,11 @@ font-size: 20px;
 margin-right: 7%;
 
 
-
 }
 
 /* ============================       5th page starts here   blogs       ================================= */
 section.blogs-section{
-   background-image: url(blogs1.jpg);
+   background-image: url(parallax1.jpg);
 
   /* Set a specific height */
   height: 100%;; 
@@ -542,7 +524,8 @@ div.project-row-grid-2{
     header.project-header{
         font-size: 20px;
     }
-
+}
+@media only screen and (max-width:600px){
     div.project-row-grid-1{
         display: grid;
         grid-template-columns: 100%;
@@ -567,10 +550,6 @@ div.project-col-grid-1{
 
 
 /* ==============================    7th page having corousel starts here ============================ */
-
-
-
-
 
 
 section.testinomial-section{
@@ -704,7 +683,7 @@ grid-template-columns: 25% auto;
     display: inline-block;
     transition: background-color 0.6s ease;
    }
-   .alldots {
+   .dot-box {
     padding: 10px 0px;
     text-align: center;
 }

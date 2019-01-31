@@ -89,10 +89,10 @@ app.get('/api',function(req,res){
 
 app.post('/api', function(req, res) {
     const form = {
-        'name': req.body.id_name
-        // 'email': req.body.Email,
-        // 'phone': req.body.Phone,
-        // 'message': req.body.Message
+        'name': req.body.a,
+        'email': req.body.b,
+         'phone': req.body.c,
+         'message': req.body.d
     }
     console.log(form);
     file.appendFile('info.txt', JSON.stringify(form), function(err){
@@ -101,6 +101,7 @@ app.post('/api', function(req, res) {
     });
    res.send('Thank you for your response');
  });
+
 
 
 
